@@ -8,6 +8,6 @@ const server = http.createServer((req, res) => {
     res.end();
 })
 
-server.listen(3000, 'localhost', () => {
+server.listen(8080, 'localhost', () => {
     console.log('Node.JS server is running on port: 3000');
 })
