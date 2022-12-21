@@ -1,19 +1,20 @@
-// const express = require('express')
-import express from 'express'
-import configViewEngine from './configs/viewEngine'
+import express from 'express';
+import configViewEngine from './configs/viewEngine';
+require('dotenv').config();
 
-const app = express()
-const port = 8080
+const app = express();
+const port = process.env.PORT || 8080;
 
 configViewEngine(app);
 
 app.get('/', (req, res) => {
-    res.render('tes/index.ejs')
+    res.render('test/index.ejs')
 })
 app.get('/about', (req, res) => {
-    res.send('about chao')
+    res.send(`I'm Eric!`)
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening at http://localhost:${port}`)
 })
+
